@@ -5,7 +5,7 @@ export class Category extends Component {
         console.log("i am in category")
         return (
             <div>
-                <h1>category</h1>
+                <h1>{this.props.category}</h1>
             </div>
         )
     }

@@ -8,6 +8,19 @@ import Category from './Category'
 
 
 class App extends React.Component {
+
+  state ={
+    category: ""
+  }
+
+  handleCategory = (category) => {
+    this.setState({
+      category: category
+    },()=>{console.log(this.state.category)})
+  }
+
+
+
   render(){
 
   return(
@@ -16,15 +29,16 @@ class App extends React.Component {
     <Switch>
 
       <Route path="/" exact>
-        <Home />
+        <Home handleCategory={this.handleCategory}/>
       </Route>
 
       <Route path="/cart" exact>
         <Cart />
       </Route>
 
+{/* Set this state category into category container to test, write function to render array later */}
       <Route path="/category" exact>
-        <Category />
+        <Category category ={this.state.category}/>
       </Route>
 
 
