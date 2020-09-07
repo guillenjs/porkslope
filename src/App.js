@@ -1,17 +1,19 @@
 import React from 'react';
 // import logo from './logo.svg';
 import { Route, Switch } from 'react-router-dom'
-import Navbar from './Navbar'
-import Home from './Home'
-import Cart from './Cart'
-import History from './History'
-import Category from './Category'
+import Navbar from './containers/Navbar'
+import Home from './containers/Home'
+import Cart from './containers/Cart'
+import History from './containers/History'
+import Category from './containers/Category'
+import Login from './containers/Login'
 
 
 class App extends React.Component {
 
   state ={
-    category: ""
+    category: "",
+    loggedIn: false
   }
 
   handleCategory = (category) => {
@@ -20,35 +22,81 @@ class App extends React.Component {
     })
   }
 
+  toggleLogin = () => {
+    this.setState({
+      loggedIn: !this.state.loggedIn
+    })
+  }
+
+
+renderApp = () => {
+  if (this.state.loggedIn === false) {
+    return <Login loggedIn = {this.toggleLogin}/>
+  }
+  else {
+    
+     return <div>
+      <Navbar />
+            <Switch>
+
+              <Route path="/" exact>
+                <Home handleCategory={this.handleCategory}/>
+              </Route>
+
+              <Route path="/cart" exact>
+                <Cart />
+              </Route>
+
+              <Route path="/history" exact>
+                <History />
+              </Route>
+        {/* Set this state category into category container to test, write function to render array later */}
+              <Route path="/category" exact>
+                <Category category ={this.state.category}/>
+              </Route>
+
+          </Switch> 
+        </div>
+  }
+  
+}
 
   render(){
-
+    console.log(this.state.loggedIn)
   return(
     <div>
-    <Navbar />
-    <Switch>
+      {this.renderApp()}
+      </div>
+    // <div>
+  
+    //   <Navbar />
+    //     <Switch>
 
-      <Route path="/" exact>
-        <Home handleCategory={this.handleCategory}/>
-      </Route>
+    //       <Route path="/" exact>
+    //         <Home handleCategory={this.handleCategory}/>
+    //       </Route>
 
-      <Route path="/cart" exact>
-        <Cart />
-      </Route>
+    //       <Route path="/cart" exact>
+    //         <Cart />
+    //       </Route>
 
-      <Route path="/history" exact>
-        <History />
-      </Route>
+    //       <Route path="/history" exact>
+    //         <History />
+    //       </Route>
+    // {/* Set this state category into category container to test, write function to render array later */}
+    //       <Route path="/category" exact>
+    //         <Category category ={this.state.category}/>
+    //       </Route>
+
+    //       <Route path="/login" exact>
+    //         <Login />
+    //       </Route>
 
 
-{/* Set this state category into category container to test, write function to render array later */}
-      <Route path="/category" exact>
-        <Category category ={this.state.category}/>
-      </Route>
+    //   </Switch> 
+    // </div>
 
 
-    </Switch>
-    </div>
   );
   }
 }

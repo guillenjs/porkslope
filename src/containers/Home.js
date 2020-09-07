@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import grocerystore from './grocerystore.png'
+import grocerystore from './icons/grocerystore.png'
 import fridge from './icons/fridge.png'
 import fridge2 from './icons/fridge2.png'
 import fridge3 from './icons/fridge3.png'

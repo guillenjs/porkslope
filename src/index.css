@@ -65,6 +65,71 @@ li:hover {
     font-size: 20px;
   }
 
+ /* login page  */
+.login {
+  position: absolute;
+  width: 539px;
+  height: 252px;
+  left: 401px;
+  top: 274px;
+
+  background: #004A66;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 21px;
+} 
+
+.loginText {
+  position: absolute;
+  height: 300px;
+  width: 200px;
+  left: 170px;
+  top: 60px;
+}
+
+.loginText textarea {
+  margin: 5px;
+  width: 200px;
+  height: 25px;
+  border-radius: 21px;
+  text-align: center;
+
+}
+
+.loginText input {
+  position: absolute;
+  left: 39.91%;
+  
+  background: #7BA58C;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.25);
+  border-radius: 27px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.185em;
+
+  color: white;
+
+  transition-duration: 0.4s;
+  
+}
+
+.loginText input:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.loginLogo {
+  max-width: 40%;
+  height: auto;
+  margin-left: 390px;
+  margin-top: 0px;
+}
+
+
 /* porkslope logo */
 .logo {
     height: 90px;
