@@ -1,0 +1,25 @@
+ [{
+    "id": 1,
+    "name": "apple",
+    "price": 20,
+    "category": "produce"
+  },
+  {
+    "id": 2,
+    "name": "banana",
+    "price": 10,
+    "category": "produce"
+  },{
+    "id": 3,
+    "name": "kiwi",
+    "price": 6,
+    "category": "produce"
+  },
+  {
+    "id": 2,
+    "name": "pineapple",
+    "price": 5,
+    "category": "produce"
+  }
+  
+]

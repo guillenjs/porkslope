@@ -7,13 +7,21 @@ import Cart from './containers/Cart'
 import History from './containers/History'
 import Category from './containers/Category'
 import Login from './containers/Login'
+// import category from './category.json'
 
 
 class App extends React.Component {
 
   state ={
     category: "",
-    loggedIn: false
+    loggedIn: false,
+    items: []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/db")
+    .then(res => res.json())
+    .then(prodcuceArr => {this.setState({items: prodcuceArr})})
   }
 
   handleCategory = (category) => {
@@ -62,7 +70,7 @@ renderApp = () => {
 }
 
   render(){
-    console.log(this.state.loggedIn)
+    console.log(this.state.items)
   return(
     <div>
       {this.renderApp()}

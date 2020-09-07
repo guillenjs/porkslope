@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
+
 export class Category extends Component {
+
     render() {
-        console.log("i am in category")
+        // console.log({category})
         return (
 
             // <div>
