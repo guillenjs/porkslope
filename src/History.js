@@ -1,23 +1,18 @@
 import React, { Component } from 'react'
 
-export class Category extends Component {
+export class history extends Component {
     render() {
-        console.log("i am in category")
         return (
-
-            // <div>
-            //     <h1>{this.props.category}</h1>
-            // </div>
             <div>
 
             <div className="total">
-                <h2>Total:</h2>
+                {/* <h2>Total:</h2>
                 <div className="innertotal">
                     <h3>$20.99</h3>
-                </div>
+                </div> */}
                
-            <div className="checkbox">      
-                {/* <div >
+            {/* <div className="checkbox">      
+                <div >
                     <label>
                        low - high 
                         <input
@@ -39,31 +34,30 @@ export class Category extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                </div> */}
-             </div>    
+                </div>
+             </div>     */}
             </div>
 
             <div className="cart">
-                <h1>{this.props.category}</h1>
+                <h1>History</h1>
                 <div className="table">
                 <table>
                  <tbody>
                     <tr>
-                        <th>Item </th>
-                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Total</th>
                     </tr>
                     <tr>
-                        <td>Salmon</td>
-                        <td>$20</td>
+                        <td>01/05/2020</td>
+                        <td>$200</td>
                     </tr>
                    </tbody> 
                  </table>
                 </div>
             </div>
         </div>
-            
         )
     }
 }
 
-export default Category
+export default history

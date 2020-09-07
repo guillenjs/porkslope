@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import Navbar from './Navbar'
 import Home from './Home'
 import Cart from './Cart'
+import History from './History'
 import Category from './Category'
 
 
@@ -16,9 +17,8 @@ class App extends React.Component {
   handleCategory = (category) => {
     this.setState({
       category: category
-    },()=>{console.log(this.state.category)})
+    })
   }
-
 
 
   render(){
@@ -35,6 +35,11 @@ class App extends React.Component {
       <Route path="/cart" exact>
         <Cart />
       </Route>
+
+      <Route path="/history" exact>
+        <History />
+      </Route>
+
 
 {/* Set this state category into category container to test, write function to render array later */}
       <Route path="/category" exact>

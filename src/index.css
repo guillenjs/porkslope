@@ -211,6 +211,51 @@ tr:nth-child(even) {
   background: #004A66;
 }
 
+.total h2 {
+  position: absolute;
+width: 118px;
+height: 49px;
+left: 20px;
+top: 20px;
 
+font-family: Roboto;
+font-style: normal;
+font-weight: 200;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+letter-spacing: 0.185em;
+
+color: #F8F7F1;
+}
+
+.innertotal {
+  position: absolute;
+  width: 83px;
+  height: 47px;
+  left: 140px;
+  top: 30px;
+
+  background: #F8F7F1;
+  border-radius: 9px;
+}
+
+.innertotal h3 {
+  font-size: 20px;
+  color: #000000;
+}
+
+.checkbox {
+  color: #dddddd;
+  position: absolute;
+  width: 200px;
+  height: 47px;
+  left: 30px;
+  top: 120px;
+
+  background:   #005270;
+  text-align: center;
+  border-radius: 9px;
+}
   
 
