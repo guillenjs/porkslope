@@ -18,13 +18,13 @@ export class Home extends Component {
         return (
             <div>
                <img src={grocerystore} className="grocery" alt="grocery store" />
-               <NavLink to="/category"><img src={fridge} id="fridge" className="categories" alt="fridge" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
-               <NavLink to="/category"><img src={fridge2} id="fridge2" className="categories" alt="fridge2" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
-               <NavLink to="/category"><img src={fridge3} id="fridge3" className="categories" alt="fridge3" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
-               <NavLink to="/category"><img src={fish} id="fish" className="categories" alt="fish" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
+               <NavLink to="/category"><img src={fridge} id="cheese" className="categories" alt="fridge" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
+               <NavLink to="/category"><img src={fridge2} id="vegetables" className="categories" alt="fridge2" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
+               <NavLink to="/category"><img src={fridge3} id="fish" className="categories" alt="fridge3" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
+               <NavLink to="/category"><img src={fish} id="meat" className="categories" alt="fish" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
                <NavLink to="/category"><img src={products} id="products" className="categories" alt="products" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
                <NavLink to="/category"><img src={coffee} id="coffee" className="categories" alt="products" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
-               <NavLink to="/category"><img src={produce} id="produce" className="categories" alt="produce" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
+               <NavLink to="/category"><img src={produce} id="fruit" className="categories" alt="produce" onClick={(e)=> this.props.handleCategory(e.target.id)}/></NavLink>
             </div>
         )
     }

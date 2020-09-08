@@ -146,7 +146,7 @@ li:hover {
     top: 95px;
 }
 
-#fridge {
+#cheese {
     position: absolute;
   width: 92px;
   height: 194px;
@@ -154,7 +154,7 @@ li:hover {
   top: 112px;
 }
 
-#fridge2 {
+#vegetables {
   position: absolute;
   width: 92px;
   height: 206px;
@@ -162,7 +162,7 @@ li:hover {
   top: 218px;
 }
 
-#fridge3 {
+#fish {
   position: absolute;
   width: 103px;
   height: 205px;
@@ -170,7 +170,7 @@ li:hover {
   top: 440px;
 }
 
-#fish {
+#meat {
   position: absolute;
   width: 178px;
   height: 160px;
@@ -194,7 +194,7 @@ li:hover {
   top: 290px;
 }
 
-#produce{
+#fruit{
   position: absolute;
   width: 148px;
   height: 138px;

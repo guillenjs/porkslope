@@ -4,7 +4,7 @@ import porkslope from './icons/porkslope.png'
 
 
 
-console.log(porkslope)
+
 
 function Navbar() {
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CartItem from './CartItem'
 
 export class Cart extends Component {
     state = {
@@ -9,6 +10,10 @@ export class Cart extends Component {
         this.setState({
             sort: evt.target.name 
         })
+    }
+
+    renderItem = () => {
+        return <CartItem />
     }
 
     render() {
@@ -58,10 +63,9 @@ export class Cart extends Component {
                             <th>Item Name</th>
                             <th>Price</th>
                         </tr>
-                        <tr>
-                            <td>Salmon</td>
-                            <td>$20</td>
-                        </tr>
+                            {
+                                this.renderItem()
+                            }
                        </tbody> 
                      </table>
                     </div>

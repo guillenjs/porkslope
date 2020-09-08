@@ -1,48 +1,27 @@
 import React, { Component } from 'react'
+import CategoryItem from './CategoryItem'
 
 
 export class Category extends Component {
 
-    render() {
-        // console.log({category})
-        return (
+    renderItems = () => {
+        console.log(this.props.items.name)
+        return <CategoryItem />
+    }
 
-            // <div>
-            //     <h1>{this.props.category}</h1>
-            // </div>
+    
+    
+
+    render() {
+        return (
             <div>
 
             <div className="total">
-                <h2>Total:</h2>
-                <div className="innertotal">
+                <h2>Categorie</h2>
+                {/* <div className="innertotal">
                     <h3>$20.99</h3>
-                </div>
-               
-            <div className="checkbox">      
-                {/* <div >
-                    <label>
-                       low - high 
-                        <input
-                            name="low"
-                            type="checkbox"
-                            checked={this.state.sort === "low"}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                
-                <div>
-                    <label>
-                       high - low 
-                        <input
-                            name="high"
-                            type="checkbox"
-                            checked={this.state.sort === "high"}
-                            onChange={this.handleChange}
-                        />
-                    </label>
                 </div> */}
-             </div>    
+                  
             </div>
 
             <div className="cart">
@@ -54,10 +33,7 @@ export class Category extends Component {
                         <th>Item </th>
                         <th>Price</th>
                     </tr>
-                    <tr>
-                        <td>Salmon</td>
-                        <td>$20</td>
-                    </tr>
+                         {this.renderItems()}
                    </tbody> 
                  </table>
                 </div>

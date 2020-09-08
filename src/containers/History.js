@@ -1,41 +1,19 @@
 import React, { Component } from 'react'
+import HistoryItem from './HistoryItem'
 
 export class history extends Component {
+
+
+    renderItem = () => {
+        return <HistoryItem />
+    }
+
     render() {
         return (
             <div>
 
             <div className="total">
-                {/* <h2>Total:</h2>
-                <div className="innertotal">
-                    <h3>$20.99</h3>
-                </div> */}
-               
-            {/* <div className="checkbox">      
-                <div >
-                    <label>
-                       low - high 
-                        <input
-                            name="low"
-                            type="checkbox"
-                            checked={this.state.sort === "low"}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                
-                <div>
-                    <label>
-                       high - low 
-                        <input
-                            name="high"
-                            type="checkbox"
-                            checked={this.state.sort === "high"}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-             </div>     */}
+           {/* Maybe in here have option to sort by price */}
             </div>
 
             <div className="cart">
@@ -47,10 +25,9 @@ export class history extends Component {
                         <th>Date</th>
                         <th>Total</th>
                     </tr>
-                    <tr>
-                        <td>01/05/2020</td>
-                        <td>$200</td>
-                    </tr>
+                        {
+                            this.renderItem()
+                        }
                    </tbody> 
                  </table>
                 </div>

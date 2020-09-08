@@ -60,7 +60,7 @@ renderApp = () => {
               </Route>
         {/* Set this state category into category container to test, write function to render array later */}
               <Route path="/category" exact>
-                <Category category ={this.state.category}/>
+                <Category category ={this.state.category} items ={this.state.items}/>
               </Route>
 
           </Switch> 
@@ -70,41 +70,11 @@ renderApp = () => {
 }
 
   render(){
-    console.log(this.state.items)
+    
   return(
     <div>
       {this.renderApp()}
-      </div>
-    // <div>
-  
-    //   <Navbar />
-    //     <Switch>
-
-    //       <Route path="/" exact>
-    //         <Home handleCategory={this.handleCategory}/>
-    //       </Route>
-
-    //       <Route path="/cart" exact>
-    //         <Cart />
-    //       </Route>
-
-    //       <Route path="/history" exact>
-    //         <History />
-    //       </Route>
-    // {/* Set this state category into category container to test, write function to render array later */}
-    //       <Route path="/category" exact>
-    //         <Category category ={this.state.category}/>
-    //       </Route>
-
-    //       <Route path="/login" exact>
-    //         <Login />
-    //       </Route>
-
-
-    //   </Switch> 
-    // </div>
-
-
+    </div>
   );
   }
 }
