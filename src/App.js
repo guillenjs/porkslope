@@ -15,11 +15,12 @@ class App extends React.Component {
   state ={
     category: "",
     loggedIn: false,
-    items: []
+    items: [],
+    cart: []
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/db")
+    fetch("http://localhost:3000/items")
     .then(res => res.json())
     .then(prodcuceArr => {this.setState({items: prodcuceArr})})
   }
@@ -36,6 +37,12 @@ class App extends React.Component {
     })
   }
 
+  handleCart = (item) => {
+    const newArr = [...this.state.cart, item]
+    this.setState({
+      cart: newArr
+    })
+  }
 
 renderApp = () => {
   if (this.state.loggedIn === false) {
@@ -60,7 +67,9 @@ renderApp = () => {
               </Route>
         {/* Set this state category into category container to test, write function to render array later */}
               <Route path="/category" exact>
-                <Category category ={this.state.category} items ={this.state.items}/>
+                <Category 
+                    category ={this.state.category} items ={this.state.items} 
+                    handleCart={this.handleCart}/>
               </Route>
 
           </Switch> 
@@ -70,7 +79,7 @@ renderApp = () => {
 }
 
   render(){
-    
+    console.log(this.state.cart)
   return(
     <div>
       {this.renderApp()}

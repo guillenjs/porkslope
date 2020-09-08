@@ -5,8 +5,14 @@ import CategoryItem from './CategoryItem'
 export class Category extends Component {
 
     renderItems = () => {
-        console.log(this.props.items.name)
-        return <CategoryItem />
+        console.log(this.props.items.map(item => console.log(item)))
+        // return <CategoryItem />
+        return this.props.items.map(item =>
+             <CategoryItem 
+                key={item.id} 
+                item ={item} 
+                handleCart={this.props.handleCart}
+                />)
     }
 
     
@@ -32,6 +38,7 @@ export class Category extends Component {
                     <tr>
                         <th>Item </th>
                         <th>Price</th>
+                        <th>Add </th>
                     </tr>
                          {this.renderItems()}
                    </tbody> 
