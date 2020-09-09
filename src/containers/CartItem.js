@@ -2,7 +2,6 @@ import React from 'react'
 
 function CartItem(props) {
     const {name, price} = props.item
-    console.log(props.item)
 
     return (
      

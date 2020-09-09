@@ -25,11 +25,18 @@ export class Category extends Component {
             <div>
 
             <div className="total">
-                <h2>Categorie</h2>
-                {/* <div className="innertotal">
-                    <h3>$20.99</h3>
-                </div> */}
-                  
+                <label>
+                    <h3>Categorie</h3>
+                    <select value={this.props.category} onChange={(e)=> this.props.handleCategory(e.target.value)}>
+                        <option value="cheese">Cheese</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fish">Fish</option>
+                        <option value="meat">Meat</option>
+                        <option value="products">Products</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="fruit">Fruit</option>
+                    </select>
+                </label>
             </div>
 
             <div className="cart">

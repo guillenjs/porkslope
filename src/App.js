@@ -68,8 +68,12 @@ renderApp = () => {
         {/* Set this state category into category container to test, write function to render array later */}
               <Route path="/category" exact>
                 <Category 
-                    category ={this.state.category} items ={this.state.items} 
-                    handleCart={this.handleCart}/>
+                    category ={this.state.category} 
+                    items ={this.state.items} 
+                    handleCart={this.handleCart}
+                    handleCategory={this.handleCategory}
+                />
+                   
               </Route>
 
           </Switch> 
