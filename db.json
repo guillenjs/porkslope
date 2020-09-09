@@ -2,24 +2,48 @@
   "id": 1,
   "name": "apple",
   "price": 20,
-  "category": "items"
+  "category": "fruit"
 },
 {
   "id": 2,
   "name": "banana",
   "price": 10,
-  "category": "items"
+  "category": "fruit"
 },{
-  "id": 3,
+  "id": 4,
   "name": "kiwi",
   "price": 6,
-  "category": "items"
+  "category": "fruit"
 },
 {
-  "id": 2,
+  "id": 5,
   "name": "pineapple",
   "price": 5,
-  "category": "items"
+  "category": "fruit"
+},
+{
+"id": 6,
+  "name": "mozarella",
+  "price": 20,
+  "category": "cheese"
+},
+{
+  "id": 7,
+  "name": "brie",
+  "price": 10,
+  "category": "cheese"
+},
+{
+  "id": 8,
+  "name": "oaxaca",
+  "price": 6,
+  "category": "cheese"
+},
+{
+  "id": 9,
+  "name": "cheddar",
+  "price": 5,
+  "category": "cheese"
 }
 ]
 }

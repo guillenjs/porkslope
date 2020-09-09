@@ -5,9 +5,11 @@ import CategoryItem from './CategoryItem'
 export class Category extends Component {
 
     renderItems = () => {
-        console.log(this.props.items.map(item => console.log(item)))
+        console.log(this.props.items.filter(item => item.category === this.props.category))
         // return <CategoryItem />
-        return this.props.items.map(item =>
+        let renderArr = this.props.items.filter(item => item.category === this.props.category)
+
+        return renderArr.map(item =>
              <CategoryItem 
                 key={item.id} 
                 item ={item} 
@@ -19,6 +21,7 @@ export class Category extends Component {
     
 
     render() {
+        console.log(this.props.category)
         return (
             <div>
 

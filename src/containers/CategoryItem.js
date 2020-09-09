@@ -18,18 +18,18 @@ class CategoryItem extends Component {
 // }
 
     render() {
-        console.log(this.props.item)
         const {name, price} = this.props.item
     return (
-             <tr>
-                <td>{name}</td>
-                <td>${price}</td>
+      <tr>
+        <td>{name}</td>
+            <td>${price}</td>
                 <td>
                 <input
-                                name="add"
-                                type="button"
-                                onClick={()=> this.props.handleCart(this.props.item)}
-                            />
+                    name="add"
+                    type="button"
+                    value="Add"
+                    onClick={()=> this.props.handleCart(this.props.item)}
+                />
                 </td>
             </tr>
     )
