@@ -59,7 +59,7 @@ renderApp = () => {
               </Route>
 
               <Route path="/cart" exact>
-                <Cart />
+                <Cart cart={this.state.cart}/>
               </Route>
 
               <Route path="/history" exact>
@@ -79,7 +79,6 @@ renderApp = () => {
 }
 
   render(){
-    console.log(this.state.cart)
   return(
     <div>
       {this.renderApp()}

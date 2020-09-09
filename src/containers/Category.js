@@ -5,8 +5,7 @@ import CategoryItem from './CategoryItem'
 export class Category extends Component {
 
     renderItems = () => {
-        console.log(this.props.items.filter(item => item.category === this.props.category))
-        // return <CategoryItem />
+        
         let renderArr = this.props.items.filter(item => item.category === this.props.category)
 
         return renderArr.map(item =>

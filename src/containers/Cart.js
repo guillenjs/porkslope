@@ -13,18 +13,26 @@ export class Cart extends Component {
     }
 
     renderItem = () => {
-        return <CartItem />
+        return this.props.cart.map((item) => <CartItem item={item}/>)
     }
 
+    // add the value of all items in the cart together
+    cartSum = ()=> {
+        let cartValue = this.props.cart.map(item => item.price)
+         return cartValue.reduce((a,b) => a + b, 0)
+    }
+
+  
+
     render() {
-        console.log(this.state.sort)
+        
         return (
             <div>
 
                 <div className="total">
                     <h2>Total:</h2>
                     <div className="innertotal">
-                        <h3>$20.99</h3>
+                        <h3>${this.cartSum()}</h3>
                     </div>
                    
                 <div className="checkbox">      

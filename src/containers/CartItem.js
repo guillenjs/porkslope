@@ -1,11 +1,14 @@
 import React from 'react'
 
-function CartItem() {
-    return (
+function CartItem(props) {
+    const {name, price} = props.item
+    console.log(props.item)
 
+    return (
+     
      <tr>
-        <td>Salmon</td>
-        <td>$20</td>
+        <td>{name}</td>
+        <td>${price}</td>
     </tr>
        
     )
