@@ -72,6 +72,7 @@ renderApp = () => {
                     items ={this.state.items} 
                     handleCart={this.handleCart}
                     handleCategory={this.handleCategory}
+                    cart = {this.state.cart}
                 />
                    
               </Route>

@@ -20,7 +20,7 @@ export class Category extends Component {
     
 
     render() {
-        console.log(this.props.category)
+        console.log(this.props.items.length)
         return (
             <div>
 
@@ -37,6 +37,9 @@ export class Category extends Component {
                         <option value="fruit">Fruit</option>
                     </select>
                 </label>
+                <div>
+                    Cart Count: {this.props.cart.length}
+                </div>
             </div>
 
             <div className="cart">
