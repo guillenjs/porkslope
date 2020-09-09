@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartItem from './CartItem'
+import uniqid from 'uniqid'
 
 export class Cart extends Component {
     state = {
@@ -13,7 +14,7 @@ export class Cart extends Component {
     }
 
     renderItem = () => {
-        return this.props.cart.map((item) => <CartItem item={item}/>)
+        return this.props.cart.map((item) => <CartItem key={uniqid()} item={item} handleCartDelete={this.props.handleCartDelete}/>)
     }
 
     // add the value of all items in the cart together

@@ -24,12 +24,11 @@ class CategoryItem extends Component {
         <td>{name}</td>
             <td>${price}</td>
                 <td>
-                <input
+                <button
                     name="add"
                     type="button"
-                    value="Add"
                     onClick={()=> this.props.handleCart(this.props.item)}
-                />
+                    >add</button>
                 </td>
             </tr>
     )

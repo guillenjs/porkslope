@@ -7,7 +7,13 @@ function CartItem(props) {
      
      <tr>
         <td>{name}</td>
-        <td>${price}</td>
+        <td>${price}
+        <input
+            name={name}
+            type="checkbox"
+            // checked={this.state.isGoing}
+            onChange={()=> props.handleCartDelete(props.item)} />
+        </td>
     </tr>
        
     )

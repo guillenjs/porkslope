@@ -7,6 +7,7 @@ import Cart from './containers/Cart'
 import History from './containers/History'
 import Category from './containers/Category'
 import Login from './containers/Login'
+import uniqid from 'uniqid'
 // import category from './category.json'
 
 
@@ -38,10 +39,25 @@ class App extends React.Component {
   }
 
   handleCart = (item) => {
-    const newArr = [...this.state.cart, item]
+    let newItem = {...item}
+      newItem.id= Math.random() 
+      console.log(newItem)
+
+    const newArr = [...this.state.cart, newItem]
+
     this.setState({
       cart: newArr
     })
+
+  }
+
+  handleCartDelete = (item) => {
+    
+    let newArr = this.state.cart.filter( (cartItem) => cartItem !== item )
+    this.setState({
+      cart: newArr
+    })
+    
   }
 
 renderApp = () => {
@@ -59,7 +75,10 @@ renderApp = () => {
               </Route>
 
               <Route path="/cart" exact>
-                <Cart cart={this.state.cart}/>
+                <Cart 
+                  cart={this.state.cart}
+                  handleCartDelete = {this.handleCartDelete}
+                />
               </Route>
 
               <Route path="/history" exact>
@@ -73,8 +92,7 @@ renderApp = () => {
                     handleCart={this.handleCart}
                     handleCategory={this.handleCategory}
                     cart = {this.state.cart}
-                />
-                   
+                />  
               </Route>
 
           </Switch> 
@@ -84,6 +102,7 @@ renderApp = () => {
 }
 
   render(){
+    console.log(this.state.cart)
   return(
     <div>
       {this.renderApp()}

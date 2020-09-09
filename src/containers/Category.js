@@ -20,10 +20,8 @@ export class Category extends Component {
     
 
     render() {
-        console.log(this.props.items.length)
         return (
             <div>
-
             <div className="total">
                 <label>
                     <h3>Categorie</h3>
