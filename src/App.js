@@ -21,6 +21,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    //Do fetch with rails server 
+    //Set up serializer in order to access categorie items through category
     fetch("http://localhost:3000/items")
     .then(res => res.json())
     .then(prodcuceArr => {this.setState({items: prodcuceArr})})
