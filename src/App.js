@@ -17,12 +17,11 @@ class App extends React.Component {
     category: "",
     loggedIn: false,
     items: [],
-    cart: []
+    cart: [],
+    lists: []
   }
 
   componentDidMount() {
-    //Do fetch with rails server 
-    //Set up serializer in order to access categorie items through category
     fetch("http://localhost:3000/categories")
     .then(res => res.json())
     .then(prodcuceArr => {this.setState({items: prodcuceArr})})
@@ -34,9 +33,19 @@ class App extends React.Component {
     })
   }
 
-  toggleLogin = () => {
+  toggleLogin = (username) => {
     this.setState({
       loggedIn: !this.state.loggedIn
+    })
+    console.log()
+
+    fetch('http://localhost:3000/users')
+    .then(res => res.json())
+    .then(userArr => {
+      let userlist = userArr.filter(user => user.name === username)
+      this.setState({
+        lists: userlist
+      })
     })
   }
 
@@ -67,7 +76,7 @@ renderApp = () => {
     return <Login loggedIn = {this.toggleLogin}/>
   }
   else {
-    
+    console.log(Date("2015-03-25").toString())
      return <div>
       <Navbar />
             <Switch>
@@ -84,7 +93,9 @@ renderApp = () => {
               </Route>
 
               <Route path="/history" exact>
-                <History />
+                <History 
+                  lists = {this.state.lists}
+                />
               </Route>
         {/* Set this state category into category container to test, write function to render array later */}
               <Route path="/category" exact>
@@ -104,7 +115,7 @@ renderApp = () => {
 }
 
   render(){
-   console.log(this.state.cart)
+   console.log(this.state.lists)
   return(
     <div>
       {this.renderApp()}

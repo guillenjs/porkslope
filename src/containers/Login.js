@@ -8,11 +8,12 @@ class login extends React.Component {
         }
 
 handleChange = (evt) => {
-        
         this.setState({
             [evt.target.name]: evt.target.value
         })
     }
+
+
 
 render() {
    
@@ -24,7 +25,7 @@ render() {
                 <div className="loginText">
                     <textarea placeholder="Username" name="username" onChange={this.handleChange} value={this.state.username}></textarea>
                     <textarea placeholder="Password" name="password" onChange={this.handleChange} value={this.state.password}></textarea>
-                    <input type="submit" value="Enter" onClick={this.props.loggedIn}/>
+                    <input type="submit" value="Enter" onClick={()=>this.props.loggedIn(this.state.username)}/>
             </div>
             </div>
         </div>

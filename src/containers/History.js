@@ -5,10 +5,14 @@ export class history extends Component {
 
 
     renderItem = () => {
-        return <HistoryItem />
+       let newArr =  this.props.lists.map(user => user.lists)
+       
+       return newArr.map(list => list.map(l => <HistoryItem item={l} />))
+        // return <HistoryItem />
     }
 
     render() {
+        console.log(this.props.lists)
         return (
             <div>
 
