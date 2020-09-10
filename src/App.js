@@ -23,7 +23,7 @@ class App extends React.Component {
   componentDidMount() {
     //Do fetch with rails server 
     //Set up serializer in order to access categorie items through category
-    fetch("http://localhost:3000/items")
+    fetch("http://localhost:3000/categories")
     .then(res => res.json())
     .then(prodcuceArr => {this.setState({items: prodcuceArr})})
   }
@@ -41,10 +41,10 @@ class App extends React.Component {
   }
 
   handleCart = (item) => {
+   
     let newItem = {...item}
-      newItem.id= Math.random() 
-      console.log(newItem)
-
+      newItem.id= uniqid() 
+     
     const newArr = [...this.state.cart, newItem]
 
     this.setState({
@@ -104,7 +104,7 @@ renderApp = () => {
 }
 
   render(){
-    console.log(this.state.cart)
+   console.log(this.state.cart)
   return(
     <div>
       {this.renderApp()}

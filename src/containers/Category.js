@@ -6,14 +6,27 @@ export class Category extends Component {
 
     renderItems = () => {
         
-        let renderArr = this.props.items.filter(item => item.category === this.props.category)
+        let renderArr = this.props.items.filter(category => category.name === this.props.category)
+        console.log(renderArr)
 
-        return renderArr.map(item =>
-             <CategoryItem 
-                key={item.id} 
-                item ={item} 
-                handleCart={this.props.handleCart}
-                />)
+        return renderArr.map(category => (category.items.map(item => <CategoryItem key={item.id} item={item} handleCart={this.props.handleCart}/>)))
+
+        //   return renderArr.map(category =>
+        //      <CategoryItem 
+        //         // key={category.item.id} 
+        //         item ={category.item} 
+        //         handleCart={this.props.handleCart}
+        //         />)
+
+        
+
+
+        // return renderArr.map(item =>
+        //      <CategoryItem 
+        //         key={item.id} 
+        //         item ={item} 
+        //         handleCart={this.props.handleCart}
+        //         />)
     }
 
     
