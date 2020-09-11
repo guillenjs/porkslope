@@ -16,9 +16,9 @@ export class history extends Component {
         return (
             <div>
 
-            <div className="total">
-           {/* Maybe in here have option to sort by price */}
-            </div>
+            {/* <div className="total">
+           Maybe in here have option to sort by price
+            </div> */}
 
             <div className="cart">
                 <h1>History</h1>

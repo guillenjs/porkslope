@@ -20,14 +20,14 @@ export class Category extends Component {
     }
 
     
-    
-
     render() {
         return (
             <div>
             <div className="total">
+            <h2>Categorie</h2>
+                <div className="categoryList">
                 <label>
-                    <h3>Categorie</h3>
+                    
                     <select value={this.props.category} onChange={(e)=> this.props.handleCategory(e.target.value)}>
                         <option value="cheese">Cheese</option>
                         <option value="vegetables">Vegetables</option>
@@ -38,8 +38,10 @@ export class Category extends Component {
                         <option value="fruit">Fruit</option>
                     </select>
                 </label>
-                <div>
-                    Cart Count: {this.props.cart.length}
+                </div>
+
+                <div className="inner">
+                    <h3>{this.props.cart.length}</h3>
                 </div>
             </div>
 

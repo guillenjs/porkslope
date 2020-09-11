@@ -300,9 +300,29 @@ color: #F8F7F1;
   height: 47px;
   left: 140px;
   top: 30px;
+  text-align: center;
 
   background: #F8F7F1;
   border-radius: 9px;
+}
+
+.inner {
+  position: absolute;
+  width: 83px;
+  height: 47px;
+  left: 100px;
+  top: 140px;
+
+  text-align: center;
+  background: #F8F7F1;
+  border-radius: 9px;
+}
+
+.categoryList {
+  position: absolute;
+
+  left: 100px;
+  top: 100px;
 }
 
 .innertotal h3 {
