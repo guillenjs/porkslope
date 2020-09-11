@@ -314,7 +314,7 @@ color: #F8F7F1;
   color: #dddddd;
   position: absolute;
   width: 200px;
-  height: 47px;
+  height: 50px;
   left: 30px;
   top: 120px;
 
@@ -322,5 +322,16 @@ color: #F8F7F1;
   text-align: center;
   border-radius: 9px;
 }
-  
+
+.saveButton {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left: 100px;
+  top: 180px;
+}
+
+.saveButton input:hover {
+  background-color: burlywood;
+}
 

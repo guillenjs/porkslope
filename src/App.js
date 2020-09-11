@@ -52,7 +52,7 @@ class App extends React.Component {
   handleCart = (item) => {
    
     let newItem = {...item}
-      newItem.id= uniqid() 
+      // newItem.id= uniqid() 
      
     const newArr = [...this.state.cart, newItem]
 
@@ -71,12 +71,68 @@ class App extends React.Component {
     
   }
 
+
+
+saveCart = () => {
+console.log("inside cart")
+ let userId = this.state.lists.map(user => user.id)
+
+  return fetch('http://localhost:3000/lists', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify ({
+          date: Date(),
+          user_id: userId[0],
+          list_items: this.state.cart
+        }
+        )
+      })
+      .then(res => res.json())
+      .then(newList => 
+        this.handleListSave(newList)
+      ) 
+}
+
+handleListSave = (list) => {
+  console.log('hello')
+  // console.log(list)
+
+  const listPost = (item) =>{
+    fetch("http://localhost:3000/list_items", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        list_id: list.id,
+        item_id: item.id
+      })
+    })
+    .then(res => res.json())
+    .then(newlistitem => {
+      let clearCart = []
+      this.setState({
+        cart: clearCart
+      })
+    })
+  }
+
+  this.state.cart.map(item => listPost(item))
+}
+
+
+
+
+
+
 renderApp = () => {
   if (this.state.loggedIn === false) {
     return <Login loggedIn = {this.toggleLogin}/>
   }
   else {
-    console.log(Date("2015-03-25").toString())
+    console.log(this.state.cart)
      return <div>
       <Navbar />
             <Switch>
@@ -89,6 +145,7 @@ renderApp = () => {
                 <Cart 
                   cart={this.state.cart}
                   handleCartDelete = {this.handleCartDelete}
+                  saveCart = {this.saveCart}
                 />
               </Route>
 
@@ -115,7 +172,7 @@ renderApp = () => {
 }
 
   render(){
-   console.log(this.state.lists)
+   console.log(this.state.cart)
   return(
     <div>
       {this.renderApp()}

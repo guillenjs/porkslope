@@ -60,7 +60,22 @@ export class Cart extends Component {
                             />
                         </label>
                     </div>
-                 </div>    
+                    
+                 </div>
+                  
+                 <div className="saveButton">
+                        <label>
+                         
+                            <input
+                                name="high"
+                                type="button"
+                                value="Save Cart"
+
+                                onClick={this.props.saveCart}
+                            />
+                        </label>
+                    </div>
+                     
                 </div>
 
                 <div className="cart">
