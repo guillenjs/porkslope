@@ -11,7 +11,6 @@ function Navbar() {
     return (
         <div className="navbar">
            <img src={porkslope} className="logo" alt="logo" />
-           
             <ul>
                 <NavLink to="/login"><li>Logout</li></NavLink>
                 <NavLink to="/history"><li>History</li></NavLink>

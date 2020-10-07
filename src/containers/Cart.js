@@ -88,7 +88,7 @@ export class Cart extends Component {
                             <th>Price</th>
                         </tr>
                             {
-                                this.renderItem()
+                            this.renderItem()
                             }
                        </tbody> 
                      </table>
